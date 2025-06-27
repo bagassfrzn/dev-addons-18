@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_no_header_footer" model="report.paperformat">
+          <field name="name">No Header/Footer Paper Format</field>
+          <field name="default" eval="True"/>
+          <field name="format">A4</field>
+          <field name="orientation">Portrait</field>
+          <field name="margin_top">0</field> <field name="margin_bottom">0</field> <field name="margin_left">5</field> <field name="margin_right">5</field> <field name="header_line" eval="False"/>
+          <field name="header_spacing">0</field> <field name="dpi">90</field>
+      </record>
+    <record id="action_report_monthly_extracurricular" model="ir.actions.report">
+        <field name="name">monthly report</field>
+        <field name="model">extracurricular.monthly.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">extracurricular_apps.report_monthly_extracurricular</field>
+        <field name="report_file">extracurricular_apps.report_monthly_extracurricular</field>
+        <field name="print_report_name">'Laporan_Bulanan_%s' % (object.extracurricular_id.name)</field>
+        <field name="binding_model_id" ref="model_extracurricular_monthly_report"/>
+        <field name="binding_type">report</field>
+  </record>
+</odoo>
+

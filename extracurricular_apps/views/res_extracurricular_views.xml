@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- FORM -->
+    <record id="res_extracurricular_view_form" model="ir.ui.view">
+        <field name="name">res.extracurricular.view.form</field>
+        <field name="model">res.extracurricular</field>
+        <field name="arch" type="xml">
+            <form string="Extracurricular">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- Smartbutton kamu ditempatkan di sini -->
+                        <button type="object"
+                                name="action_view_member"
+                                class="oe_stat_button"
+                                icon="fa-users">
+                            <div class="o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="member_count" string="" widget="statinfo"/>
+                                </span>
+                                <span class="o_stat_text">Members</span>
+                            </div>
+                        </button>
+                    </div>
+
+
+
+                    <field name="logo" widget="image" class="oe_avatar" />
+                    <div class="oe_tittle">
+                        <h1>
+                            <field name="name" placeholder="Extracurricular name.." />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="coach_id" />
+                        <field name="lead_id" />
+                    </group>
+                    <group>
+                        <field name="advisor_id" />
+                        <field name="sequence_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- list -->
+
+    <record id="res_extracurricular_view_list" model="ir.ui.view">
+        <field name="name">res.extracurricular.view.list</field>
+        <field name="model">res.extracurricular</field>
+        <field name="arch" type="xml">
+            <list string="Extracurricular">
+                <field name="name" />
+                <field name="coach_id" />
+                <field name="lead_id" />
+                <field name="advisor_id" />
+            </list>
+        </field>
+    </record>
+
+    <!-- KANBAN -->
+    <record id="res_extracurricular_view_kanban" model="ir.ui.view">
+    <field name="name">res.extracurricular.view.kanban</field>
+    <field name="model">res.extracurricular</field>
+    <field name="arch" type="xml">
+        <kanban sample="1">
+            <field name="id" />
+            <field name="name" />
+            <field name="coach_id" />
+            <field name="logo" /> <field name="advisor_id"/>
+            <field name="lead_id"/>
+
+            <templates>
+                <t t-name="card" class="flex-row">
+                    <aside class="o_kanban_aside_full">
+                        <field name="logo" class="w-100" widget="image" options="{'img_class': 'object-fit-contain w-100 h-100'}"/>
+                    </aside>
+                    <main class="ps-2 ps-md-0">
+                        <div class="mb-1">
+                            <strong class="oe_kanban_title text-truncate d-block"><field name="name" /></strong>
+                            <div t-if="record.coach_id.raw_value"> 
+                                <span class="text-muted text-truncate d-block">
+                                    <i class="fa fa-user me-1"/> <field name="coach_id" />
+                                </span>
+                                <span class="text-muted text-truncate d-block">
+                                    <i class="fa fa-users me-1"/> <field name="member_count" />
+                                </span>
+                            </div>
+                        </div>
+                    </main>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+    
+
+</odoo>

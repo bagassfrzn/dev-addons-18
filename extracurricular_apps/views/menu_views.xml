@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ACTIONS -->
+    <record id="action_extracurricular_coaches" model="ir.actions.act_window">
+        <field name="name">Coaches</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('extracurricular_contact_type','=','coach')]</field>
+        <field name="context">{'default_extracurricular_contact_type': 'coach'}</field>
+    </record>
+
+    <record id="action_extracurricular_members" model="ir.actions.act_window">
+        <field name="name">Members</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('extracurricular_contact_type','=','student')]</field>
+        <field name="context">{'default_extracurricular_contact_type': 'student'}</field>
+    </record>
+
+    <record id="action_extracurricular_advisors" model="ir.actions.act_window">
+        <field name="name">Advisors</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('extracurricular_contact_type','=','teacher')]</field>
+        <field name="context">{'default_extracurricular_contact_type': 'teacher'}</field>
+    </record>
+
+    <record id="res_extracurricular_action" model="ir.actions.act_window">
+        <field name="name">Extracurricular</field>
+        <field name="res_model">res.extracurricular</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Buat data ekstrakurikuler baru!
+            </p>
+        </field>
+    </record>
+
+    <record id="action_generate_monthly_report_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Monthly Report</field>
+        <field name="res_model">extracurricular.monthly.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_monthly_report" model="ir.actions.act_window">
+        <field name="name">Monthly Reports</field>
+        <field name="res_model">extracurricular.monthly.report</field>
+        <field name="view_mode">list,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <!-- MENUS -->
+    <menuitem id="extracurricular_root_menu" name="Extracurricular" sequence="10"/>
+    
+    <menuitem id="extracurricular_menu" name="Master" parent="extracurricular_root_menu" sequence="10"/>
+
+    <menuitem id="menu_extracurricular" name="Extracurricular" action="res_extracurricular_action" parent="extracurricular_menu" sequence="20"/>
+    <menuitem id="menu_extracurricular_members" name="Members" parent="extracurricular_menu" action="action_extracurricular_members" sequence="30"/>
+    <menuitem id="menu_extracurricular_coaches" name="Coaches" parent="extracurricular_menu" action="action_extracurricular_coaches" sequence="40"/>
+    <menuitem id="menu_extracurricular_advisors" name="Advisors" parent="extracurricular_menu" action="action_extracurricular_advisors" sequence="50"/>
+
+    <menuitem id="extracurricular_menu_report" name="Reporting" parent="extracurricular_root_menu" sequence="60"/>
+    
+    <menuitem id="menu_generate_monthly_report" name="Generate Monthly Report" parent="extracurricular_menu_report" action="action_generate_monthly_report_wizard" sequence="10"/>
+    <menuitem id="menu_monthly_report_root" name="Monthly Reports" parent="extracurricular_menu_report" action="action_monthly_report" sequence="20"/>
+</odoo>

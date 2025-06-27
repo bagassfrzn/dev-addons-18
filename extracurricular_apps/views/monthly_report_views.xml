@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_extracurricular_monthly_report_form" model="ir.ui.view">
+        <field name="name">extracurricular.monthly.report.form</field>
+        <field name="model">extracurricular.monthly.report</field>
+        <field name="arch" type="xml">
+            <form string="Laporan Bulanan Ekskul">
+                <header>
+                    <button name="print_report" string="Cetak PDF" type="object" class="btn-primary" />
+                </header>
+                <group>
+                    <field name="name"/>
+                    <field name="extracurricular_id"/>
+                    <field name="month"/>
+                    <field name="year"/>
+                </group>
+                <field name="report_line_ids">
+                    <list editable="bottom">
+                        <field name="partner_id"/>
+                        <field name="week1_status"/>
+                        <field name="week2_status"/>
+                        <field name="week3_status"/>
+                        <field name="week4_status"/>
+                        <field name="week5_status"/>
+                    </list>
+                </field>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_extracurricular_monthly_report_list" model="ir.ui.view">
+        <field name="name">extracurricular.monthly.report.list</field>
+        <field name="model">extracurricular.monthly.report</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="extracurricular_id"/>
+                <field name="month"/>
+                <field name="year"/>
+            </list>
+        </field>
+    </record>
+</odoo>

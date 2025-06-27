@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="report_monthly_extracurricular">
+    <t t-call="web.basic_layout">
+      <main>
+        <t t-foreach="docs" t-as="doc">
+          <style>
+              *{
+                  font-family: "Times New Roman", Times, serif;
+              },
+              .header{
+                display:none !important;
+              }
+          </style>  
+          <t t-set="bulan_dict" t-value="{
+                                            '1': 'Januari', '2': 'Februari', '3': 'Maret', '4': 'April',
+                                            '5': 'Mei', '6': 'Juni', '7': 'Juli', '8': 'Agustus',
+                                            '9': 'September', '10': 'Oktober', '11': 'November', '12': 'Desember'
+                                          }"/>
+          <!-- <div class="header" style=""> -->
+            <div style="text-align: center;border-bottom: 2px solid black;">
+              <h2><strong>REKAPITULASI ABSENSI EKSTRAKURIKULER <t t-esc="doc.extracurricular_id.name"/></strong></h2>
+              <h3>SMK NEGERI 12 JAKARTA</h3>
+            </div>
+              <br/>
+              <h3 style="text-align: center;"><t t-esc="bulan_dict.get(doc.month, 'Bulan tidak diketahui')"/> <t t-esc="doc.year"/></h3>
+          <!-- </div> -->
+          <div class="page">
+            <table style="width: 100%; border-collapse: collapse;">
+              <thead>
+                <tr>
+                  <th style="text-align:center;width:5%;"><strong>NO</strong></th>
+                  <th style="text-align:center;width:40%;"><strong>NAMA</strong></th>
+                  <th style="text-align:center;width:8%;"><strong>KELAS</strong></th>
+                  <th style="text-align:center;width:8%;"><strong>Minggu 1</strong></th>
+                  <th style="text-align:center;width:8%;"><strong>Minggu 2</strong></th>
+                  <th style="text-align:center;width:8%;"><strong>Minggu 3</strong></th>
+                  <th style="text-align:center;width:8%;"><strong>Minggu 4</strong></th>
+                  <th style="text-align:center;width:8%;"><strong>Minggu 5</strong></th>
+                  <th style="text-align:center;width:10%;"><strong>KET</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-set="no" t-value="1"/>
+                <t t-foreach="doc.report_line_ids" t-as="line">
+                  <tr>
+                    <td style="text-align:center;"><t t-esc="no"/></td>
+                    <td style="padding-left:3px;"><t t-esc="line.partner_id.name.upper()"/></td>
+                    <td style="text-align:center;">
+                      <t t-esc="(line.partner_id.grade or '') + ' ' + (line.partner_id.major or '')"/>
+                    </td>
+                    <td style="text-align:center;"><t t-esc="line.week1_status or ''"/></td>
+                    <td style="text-align:center;"><t t-esc="line.week2_status or ''"/></td>
+                    <td style="text-align:center;"><t t-esc="line.week3_status or ''"/></td>
+                    <td style="text-align:center;"><t t-esc="line.week4_status or ''"/></td>
+                    <td style="text-align:center;"><t t-esc="line.week5_status or ''"/></td>
+                    <td style="text-align:center;"></td>
+                  </tr>
+                  <t t-set="no" t-value="no + 1"/>
+                </t>
+              </tbody>
+            </table>
+            <br/>
+            <table class="table table-sm" style="width:12%;font-size:12px;">
+              <tr>
+                  <td><strong>KETERANGAN :</strong></td>
+              </tr>
+              <tr>
+                  <td>H = HADIR</td>
+              </tr>
+              <tr>
+                  <td>I = IZIN</td>
+              </tr>
+              <tr>
+                  <td>S = SAKIT</td>
+              </tr>
+              <tr>
+                  <td>A = ALPA</td>
+              </tr>
+            </table>
+            <br/><br/>
+            <h4 style="text-align:center;">DOKUMENTASI</h4>
+            <table style="width:100%; border: 1px solid black; border-collapse: collapse;">
+              <tr>
+                <th colspan="2" style="border: 1px solid black; text-align: center;">DOKUMENTASI MINGGU 1</th>
+                <th colspan="2" style="border: 1px solid black; text-align: center;">DOKUMENTASI MINGGU 3</th>
+              </tr>
+              <tr>
+                <td colspan="2" style="border: 1px solid black; text-align: center;">
+                      <img t-if="doc.week1_absence_id.documentation"
+                          t-att-src="'data:image/png;base64,' + doc.week1_absence_id.documentation.decode('utf-8')"
+                          style="max-height:150px;"/>
+                </td>
+                <td colspan="2" style="border: 1px solid black; text-align: center;">
+                  <img t-if="doc.week3_absence_id.documentation"
+                          t-att-src="'data:image/png;base64,' + doc.week3_absence_id.documentation.decode('utf-8')"
+                          style="max-height:150px;"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="border: 1px solid black;">TANGGAL: <t t-esc="doc.week1_absence_id.date or '-'"/></td>
+                <td colspan="2" style="border: 1px solid black;">TANGGAL: <t t-esc="doc.week3_absence_id.date or '-'"/></td>
+              </tr>
+              <tr>  
+                <td colspan="2" style="border: 1px solid black;">TEMPAT: <t t-esc="doc.week1_absence_id.documentation_place or 'Ruang Kelas'"/></td>
+                <td colspan="2" style="border: 1px solid black;">TEMPAT: <t t-esc="doc.week3_absence_id.documentation_place or 'Ruang Kelas'"/></td>
+              </tr>
+
+              <tr>
+                <th colspan="2" style="border: 1px solid black; text-align: center;">DOKUMENTASI MINGGU 2</th>
+                <th colspan="2" style="border: 1px solid black; text-align: center;">DOKUMENTASI MINGGU 4</th>
+              </tr>
+              <tr>
+                <td colspan="2" style="border: 1px solid black; text-align: center;">
+                  <img t-if="doc.week2_absence_id.documentation"
+                          t-att-src="'data:image/png;base64,' + doc.week2_absence_id.documentation.decode('utf-8')"
+                          style="max-height:150px;"/>
+                </td>
+                <td colspan="2" style="border: 1px solid black; text-align: center;">
+                  <img t-if="doc.week4_absence_id.documentation"
+                          t-att-src="'data:image/png;base64,' + doc.week4_absence_id.documentation.decode('utf-8')"
+                          style="max-height:150px;"/>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="border: 1px solid black;">TANGGAL: <t t-esc="doc.week2_absence_id.date or '-'"/></td>
+                <td colspan="2" style="border: 1px solid black;">TANGGAL: <t t-esc="doc.week4_absence_id.date or '-'"/></td>
+              </tr>
+              <tr>  
+                <td colspan="2" style="border: 1px solid black;">TEMPAT: <t t-esc="doc.week2_absence_id.documentation_place or 'Ruang Kelas'"/></td>
+                <td colspan="2" style="border: 1px solid black;">TEMPAT: <t t-esc="doc.week4_absence_id.documentation_place or 'Ruang Kelas'"/></td>
+              </tr>
+            </table>
+          </div>
+        </t>
+      </main>
+    </t>
+  </template>
+</odoo>
