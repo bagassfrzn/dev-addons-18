@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_image_brand_user,image.brand.user,model_image_brand,base.group_user,1,1,1,1
+access_our_client_user,our.client.user,model_our_client,base.group_user,1,1,1,1
+access_our_service_user,our.service.user,model_our_service,base.group_user,1,1,1,1
+access_our_area_user,our.area.user,model_our_area,base.group_user,1,1,1,1
+access_our_product_user,our.product.user,model_our_product,base.group_user,1,1,1,1
+

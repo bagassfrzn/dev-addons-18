@@ -18,9 +18,9 @@ class ITClubAPI(http.Controller):
         return provided_key == actual_key
 
    
-    @http.route('/api/test-connection', type='http', auth='public', methods=['GET'], csrf=False)
-    def test_connection(self, **kwargs):
-        return "Bagas mau reign"
+    # @http.route('/api/test-connection', type='http', auth='public', methods=['GET'], csrf=False)
+    # def test_connection(self, **kwargs):
+    #     return "Bagas mau reign"
 
     @http.route('/api/create-member', type='json', auth='public', methods=['POST'], csrf=False, cors='*')
     def create_member(self, **kwargs):

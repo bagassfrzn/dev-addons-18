@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_our_product_form" model="ir.ui.view">
+        <field name="name">our.product.form</field>
+        <field name="model">our.product</field>
+        <field name="arch" type="xml">
+            <form string="Our product">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="is_published"/>
+                        <field name="product_url" widget="url" placeholder="e.g. https://www.odoo.com"/>
+                        <field name="description"/>
+                    </group>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_our_product_list" model="ir.ui.view">
+        <field name="name">our.product.list</field>
+        <field name="model">our.product</field>
+        <field name="arch" type="xml">
+            <list string="Our products">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="is_published"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_website_our_product" model="ir.actions.act_window">
+        <field name="name">Our products</field>
+        <field name="res_model">our.product</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new our product to display on your website!
+            </p>
+        </field>
+    </record>
+
+    <!-- <menuitem
+        id="menu_website_our_product"
+        name="our product"
+        action="action_website_our_product"
+        parent="website.menu_website_configuration"
+        sequence="200"/> -->
+</odoo>

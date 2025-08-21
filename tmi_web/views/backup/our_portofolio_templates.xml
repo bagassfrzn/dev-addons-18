@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="our_portofolio_template" name="Thomas Maritim Homepage">
+    <html t-att-lang="lang">
+        <head>
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+            <t t-call-assets="web.assets_frontend" t-css="true"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+
+            <style>
+                <!-- /* =================================== */
+                /* 1. General & Body Styles            */
+                /* =================================== */ -->
+                body {
+                    font-family: 'Poppins', sans-serif;
+                    /* Padding ini penting agar konten tidak tertutup navbar sticky */
+                    <!-- padding-top: 95px;  -->
+                }
+                .section-padding { padding: 100px 0; }
+
+                <!-- /* =================================== */
+                /* 2. Header & Navbar Styles           */
+                /* =================================== */ -->
+                .navbar-tm-custom {
+                    padding: 20px 100px;
+                    background: linear-gradient(180deg, #02536B 0%, rgba(4, 162, 209, 0.00) 100%);
+                    transition: background 0.3s ease, padding 0.3s ease;
+                }
+                .navbar-tm-custom .navbar-brand img {
+                    max-height: 55px;
+                }
+                .navbar-tm-custom .navbar-nav .nav-link {
+                    color: white;
+                    font-weight: 500;
+                    padding: 0 15px;
+                    opacity: 0.9;
+                    transition: opacity 0.2s;
+                }
+                .navbar-tm-custom .navbar-nav .nav-link:hover {
+                    opacity: 1;
+                }
+                .navbar-tm-custom .header-contact a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 500;
+                    margin-left: 20px;
+                    opacity: 0.9;
+                }
+                .navbar-tm-custom .header-contact a:hover {
+                    opacity: 1;
+                }
+
+                /* Expanded Mobile Menu Background */
+                .navbar-collapse.show {
+                    background-color: rgba(2, 83, 107, 0.95);
+                    padding: 10px 20px 20px 20px;
+                    border-radius: 8px;
+                    margin-top: 10px;
+                }
+
+                <!-- /* =================================== */
+                /* 3. Hero Section                     */
+                /* =================================== */ -->
+                .hero-section-tm {
+                    position: relative;
+                    padding: 100px 0;
+                    height: 60vh;
+                    background: url('/tmi_web/static/src/img/background-hero.png') no-repeat top center;
+                    background-size: cover;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                }
+                .hero-section-tm .hero-overlay {
+                    position: absolute;
+                    top: 0; left: 0; right: 0; bottom: 0;
+                    background: rgba(2, 83, 107, 0.9);
+                }
+                .hero-section-tm .hero-content {
+                    position: relative;
+                    z-index: 2;
+                }
+                .hero-badge-tm {
+                    display: inline-block;
+                    padding: 15px 25px;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    border-radius: 10px;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    margin-bottom: 1.5rem;
+                }
+                .hero-title-tm {
+                    font-size: 3.5rem;
+                    font-weight: 700;
+                    line-height: 1;
+                    margin-bottom: 1rem;
+                }
+                .hero-description-tm {
+                    font-size: 1.6rem;
+                    line-height: 1.6;
+                    color: rgba(255, 255, 255, 0.9);
+                }
+
+                <!-- /* =================================== */
+                /* 4. Products Section                 */
+                /* =================================== */ -->
+                .products-section-tm {
+                    background-color: #f8f9fa;
+                }
+                .products-section-title {
+                    font-weight: 700;
+                    font-size: 2.5rem;
+                    color: #1A202C;
+                }
+                .product-card-tm {
+                    background-color: white;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+                    overflow: hidden;
+                    height: 100%;
+                    transition: transform 0.3s, box-shadow 0.3s;
+                }
+                .product-card-tm:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+                }
+                .card-image-wrapper {
+                    height: 200px;
+                }
+                .product-card-tm .card-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .product-card-tm .card-body-tm {
+                    padding: 20px;
+                }
+                .product-card-tm .card-title-tm {
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    color: #1A202C;
+                    margin-bottom: 0.5rem;
+                }
+                .product-card-tm .card-text-tm {
+                    font-size: 0.9rem;
+                    color: #5F6C7B;
+                    line-height: 1.6;
+                }
+
+                <!-- /* =================================== */
+                /* 5. Footer Styles                    */
+                /* =================================== */ -->
+                .footer-tm {
+                    background-color:rgba(58, 137, 158, 1);
+                    color:rgb(255, 255, 255);
+                    padding: 60px 0 20px 0;
+                }
+                .footer-tm h5 {
+                    color: white;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+                .footer-tm p, .footer-tm a {
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 0.9rem;
+                    text-decoration: none;
+                }
+                .footer-tm a:hover {
+                    color: white;
+                }
+                .footer-tm .footer-links {
+                    padding-left: 0;
+                    list-style: none;
+                }
+                .footer-tm .footer-links li {
+                    margin-bottom: 10px;
+                }
+                .footer-tm .bottom-bar {
+                    border-top: 1px solid rgba(255, 255, 255, 0.2);
+                    margin-top: 40px;
+                    padding-top: 20px;
+                    font-size: 0.8rem;
+                }
+
+                <!-- /* =================================== */
+                /* 6. Responsive Media Queries         */
+                /* =================================== */ -->
+                @media (min-width: 992px) {
+                    /* Center logo on desktop */
+                    .navbar-tm-custom .navbar-brand {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+
+                @media (max-width: 991.98px) {
+                    /* Solid background for navbar on mobile */
+                    .navbar-tm-custom {
+                        background: #02536B;
+                        padding: 10px 15px;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    }
+                    /* Spacing for mobile menu items */
+                    .navbar-collapse .nav-item {
+                        margin-top: 15px;
+                    }
+                    .navbar-collapse .nav-item:hover {
+                        background-color: rgba(255,255,255,0.1);
+                        border-radius: 4px;
+                    }
+                    /* Stack contact links on mobile */
+                    .navbar-tm-custom .header-contact a {
+                        display: block;
+                        padding: 8px 0;
+                        margin-left: 0;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <header class="header-tm">
+                <nav class="container-fluid navbar navbar-expand-lg navbar-dark fixed-top navbar-tm-custom">
+                    <a class="navbar-brand" href="/">
+                        <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim"/>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Our Services</a></li>
+                        </ul>
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Area of Operation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Brands</a></li>
+                        </ul>
+
+                        <div class="header-contact ms-auto">
+                            <a class="nav-link" href="tel:+622122554816">+6221 2255-4816</a>
+                            <a class="nav-link" href="mailto:info@thomasmaritim.com">info@thomasmaritim.com</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <section class="hero-section-tm">
+                    <div class="hero-overlay"></div>
+                    <div class="container-fluid hero-content text-center" style="width:90%;">
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8 mt-5">
+                                <span class="hero-badge-tm">Our Portfolio</span>
+                                <h1 class="hero-title-tm">Proven Excellence Across the</h1>
+                                <h1 class="hero-title-tm">Maritime Industry</h1>
+                                <p class="hero-description-tm">
+                                    Delivering consistent, high-quality marine supplies to vessels and offshore operations. On time, every time.
+                                </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-padding products-section-tm">
+                    <div class="container">
+                        <h2 class="products-section-title">- Our Products</h2>
+                        <div class="row mt-5 justify-content-center">
+                            <t t-foreach="our_products or []" t-as="product">
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="product-card-tm">
+                                        <div class="card-image-wrapper">
+                                            <img t-attf-src="/web/image/our.product/{{product.id}}/image" class="card-img" t-att-alt="product.name"/>
+                                        </div>
+                                        <div class="card-body-tm">
+                                            <h5 class="card-title-tm" t-field="product.name"/>
+                                            <p class="card-text-tm" t-field="product.description"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <footer id="my_custom_footer" class="footer-tm">
+                    <div class="container-fluid" style="width:90%;">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim" style="max-height: 50px;" class="mb-3" />
+                                <p class="fw-bold text-white">PT Thomas Maritim Indonesia</p>
+                                <p>
+                                    Sedayu Square J 17<br/>
+                                    Jl Outer Ring Ringroad - Cengkareng Barat<br/>
+                                    Cengkareng - Jakarta Barat<br/>
+                                    DKI Jakarta , 11730<br/><br/>
+                                    +6221 2255 4816<br/>
+                                    info@thomasmaritim.com
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-md-6 mb-4"></div>
+                            <div class="col-lg-2 col-md-4 mb-4">
+                                <h5>About Us</h5>
+                                <ul class="footer-links">
+                                    <li><a href="/about-us">Who Are We</a></li>
+                                    <li><a href="/our-services">Our Brands</a></li>
+                                    <li><a href="/area-of-operation">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 mb-4">
+                                <h5>Our Services</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">Marine Supply &amp; Services</a></li>
+                                    <li><a href="#">Machinery &amp; Industrial Solutions</a></li>
+                                    <li><a href="#">LSA/FFA Services</a></li>
+                                    <li><a href="#">Other</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 mb-4">
+                                <h5>Area of Operation</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">Shipowner and management</a></li>
+                                    <li><a href="#">Offshore</a></li>
+                                    <li><a href="#">Factory &amp; Plantation</a></li>
+                                    <li><a href="#">General Merchant</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bottom-bar text-center text-white-50">
+                            <div class="footer-content" style="display:flex; margin: 0 auto; justify-content: space-between; align-items:center; flex-wrap:wrap;">
+                                <p class="mb-0" style="text-align:left;">© 2025 Thomas Maritim Indonesia. All Rights Reserved.</p>
+                                <p class="mb-0" style="text-align:right;">Image from Freepik</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+
+            <t t-call-assets="web.assets_frontend_minimal" t-css="false"/>
+            <script type="text/javascript">
+                // Script untuk filter logo tidak ada di HTML, jadi dikosongkan untuk saat ini.
+                // Jika Anda membutuhkannya, HTML untuk filter dan logo harus ditambahkan.
+            </script>
+        </body>
+    </html>
+</template>
+</odoo>

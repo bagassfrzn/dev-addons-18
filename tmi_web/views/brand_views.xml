@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_image_brand_form" model="ir.ui.view">
+        <field name="name">image.brand.form</field>
+        <field name="model">image.brand</field>
+        <field name="arch" type="xml">
+            <form string="Brand Logo">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="is_published"/>
+                        <field name="brand_url" widget="url" placeholder="e.g. https://www.odoo.com"/>
+                    </group>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_image_brand_list" model="ir.ui.view">
+        <field name="name">image.brand.list</field>
+        <field name="model">image.brand</field>
+        <field name="arch" type="xml">
+            <list string="Brand Logos">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="is_published"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_website_image_brand" model="ir.actions.act_window">
+        <field name="name">Brand Logos</field>
+        <field name="res_model">image.brand</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new brand logo to display on your website!
+            </p>
+        </field>
+    </record>
+
+    <!-- <menuitem
+        id="menu_website_image_brand"
+        name="Brand Logos"
+        action="action_website_image_brand"
+        parent="website.menu_website_configuration"
+        sequence="100"/> -->
+</odoo>

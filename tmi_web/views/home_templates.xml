@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="brand_page_template" name="Thomas Maritim Homepage">
+    <html t-att-lang="lang">
+        <head>
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+            <t t-call-assets="web.assets_frontend" t-css="true"/>
+            <link rel="stylesheet" href="/tmi_web/static/css/home.css"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+            <style>
+
+            </style>
+        </head>
+        <body>
+            <header class="header-tm">
+                <nav class="container-fluid navbar navbar-expand-lg navbar-dark" style="width:90%;">
+                    <div class="d-none d-lg-flex align-items-center">
+                        <ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li><li class="nav-item"><a class="nav-link" href="/products">Our Services</a></li></ul>
+                    </div>
+                    <div class="d-none d-lg-flex align-items-center">
+                        <ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="#area-of-operation">Area of Operation</a></li><li class="nav-item"><a class="nav-link" href="#our-brands">Brands</a></li></ul>
+                    </div>
+                    <a class="navbar-brand mx-auto" href="/"><img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim"/></a>
+                    <div class="d-none d-xl-flex header-contact ms-auto">
+                        <a href="tel:+622122554816">+6221 2255-4816</a><a href="mailto:info@thomasmaritim.com">info@thomasmaritim.com</a>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <section class="hero-section-tm">
+                    <div class="hero-overlay"></div>
+                    <div class="container-fluid hero-content" style="width:90%;">
+                        <div class="row" style="padding-top:28%;"><div class="col-lg-8 mt-5"><span class="hero-badge-tm">#1 Maritime Services</span><h1 class="hero-title-tm">Complete</h1><h1 class="hero-title-tm">Maritime Support</h1><h1 class="hero-title-tm">in Indonesia</h1><p class="hero-description-tm">Thomas Maritim Indonesia is a global maritime services company specializing in provisions of ship supplies, stores, spareparts, &amp; cleaning solutions in Indonesia.</p></div></div>
+                        <div class="row mr-5 ml-5">
+                            <div class="row hero-cards-container-tm">
+                                <div class="col-md-6 col-lg-3 mb-4"><div class="hero-card-tm"><h4>Service</h4><p>Strong customer relationships through attentive service and fast, detailed responses.</p></div></div>
+                                <div class="col-md-6 col-lg-3 mb-4"><div class="hero-card-tm"><h4>Quality</h4><p>Committed to quality and customer satisfaction through structured control points and checklists.</p></div></div>
+                                <div class="col-md-6 col-lg-3 mb-4"><div class="hero-card-tm"><h4>Punctuality</h4><p>Delivering cargo and quality service on time to boost your productivity and global competitiveness.</p></div></div>
+                                <div class="col-md-6 col-lg-3 mb-4"><div class="hero-card-tm"><h4>Communicative</h4><p>Staying communicative and responsive to inquiries to prevent miscommunication.</p></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-padding">
+                    <div class="container-fluid text-center mr-5 ml-5 " style="width:90%;">
+                    <span class="section-badge">Our Services</span>
+                        <h2 class="section-title" style=" color: rgba(2, 83, 107, 1);">Complete Marine &amp; Industrial <br/> Solutions</h2>
+                        <p class="section-subtitle mt-3 mb-5" style="color:rgba(2, 83, 107, 0.8); max-width: 850px; margin-left: auto; margin-right: auto;" t-esc="'From quality supplies and calibration to safety services and carbon fabrication, keeping your operations smooth and ready.' or ''"/>
+                        <div class="row">
+                            <t t-foreach="our_services or []" t-as="service">
+                                <div class="col-md-6 col-lg-3 mb-4">
+                                    <a href="#" class="service-card-tm"><img t-attf-src="/web/image/our.service/{{service.id}}/image" class="service-img" t-att-alt="service.name"/><div class="service-overlay"></div></a>
+                                    <br/>
+                                    <h4 style="text-align:left; weight:1000; color:rgba(2, 83, 107, 1);"><t t-esc="service.name"/></h4>
+                                    <p style="text-align:left;color : rgba(2, 83, 107, 0.6);"><t t-esc="service.description"/></p>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-padding container text-center" id="area-of-operation" style="margin-bottom:-30px;">
+                    <span class="section-badge">Area of Operation</span>
+                    <div class="row"><h2 class="mb-3 section-title " style="color:rgba(2, 83, 107, 1);">Trusted Across Sectors</h2><p class="mx-auto mb-5 section-subtitle" style=" color:rgba(2, 83, 107, 0.8);" t-esc="'Serving major ports and coastal hubs to keep your missions supported and sailing smoothly.' or ''"/></div>
+                </section>
+                <section class="section-padding trusted-section-tm">
+                    <div class="container mr-5 ml-5 text-center">
+                        <div class="row">
+                            <div class="col-md-3 trusted-item">
+                                <!-- <i class="fa fa-ship"/><h5>Shipowner and<br/>Management</h5> -->
+                                <img src="/tmi_web/static/src/img/shipowner.png" /><h5>Shipowner and<br/>Management</h5>
+                            </div>
+                            <div class="col-md-3 trusted-item">
+                                <!-- <i class="fa fa-cogs"/><h5>Offshore</h5> -->
+                                <img src="/tmi_web/static/src/img/offshore.png" /><h5>Offshore</h5>
+                            </div>
+                            <div class="col-md-3 trusted-item">
+                                <!-- <i class="fa fa-industry"/><h5>Factory &amp;<br/>Plantation</h5> -->
+                                <img src="/tmi_web/static/src/img/factory.png" /><h5>Factory &amp;<br/>Plantation</h5>
+                            </div>
+                            <div class="col-md-3 trusted-item">
+                                <!-- <i class="fa fa-wrench"/><h5>General<br/>Merchant</h5> -->
+                                <img src="/tmi_web/static/src/img/merchant.png" /><h5>General<br/>Merchant</h5>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="container mr-5 ml-5 text-center py-5" style="margin-top:100px;">
+                    <span class="section-badge">Our Client</span>
+                    <h1 class="section-title" style="color:rgba(2, 83, 107, 1);">Empowering Maritime Success</h1>
+                    <p class="section-subtitle" style="color:rgba(2, 83, 107, 0.8);">Trusted by industry leaders, we build long-term partnerships that ensure seamless supply solutions across global waters.</p>
+                    <div class="filter-controls mb-5"><button type="button" class="btn active" data-filter="all" style="display:none;">All</button><button type="button" class="btn" data-filter="shipowner">Shipowner &amp; Management</button><button type="button" class="btn" data-filter="factories">Factories / Plantation</button><button type="button" class="btn" data-filter="service">Service Provider</button></div>
+                    <div class="row d-flex align-items-center justify-content-center" id="client-logos-grid">
+                        <t t-if="not our_clients"><div class="alert alert-warning">No client logos have been added yet.</div></t>
+                        <div t-foreach="our_clients" t-as="client" t-attf-class="col-lg-2 col-md-3 col-4 p-4 logo-item client-logo-item" t-att-data-category="client.category">
+                            <a t-if="client.client_url" t-att-href="client.client_url" target="_blank" class="d-flex justify-content-center align-items-center h-100"><img t-attf-src="/web/image/our.client/{{client.id}}/image" class="logo-img" t-att-alt="client.name"/></a>
+                            <div t-else="" class="d-flex justify-content-center align-items-center h-100"><img t-attf-src="/web/image/our.client/{{client.id}}/image" class="logo-img" t-att-alt="client.name"/></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="container mt-5 mr-5 ml-5 text-center py-5" id="our-brands" style="margin-top:100px;">
+                    <span class="section-badge">Our Brand</span>
+                    <h1 class="section-title" style="color:rgba(2, 83, 107, 1);">The Power Behind Your <br/> Maritime Operations</h1>
+                    <p class="section-subtitle" style="color:rgba(2, 83, 107, 0.8);">With a passion for innovation and an unwavering focus on quality, our brand empowers fleets to achieve seamless, global supply chain success.</p>
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <t t-if="not brands"><div class="alert alert-warning">No brand logos have been added yet.</div></t>
+                        <div t-foreach="brands" t-as="brand" class="col-lg-2 col-md-3 col-4 p-4 logo-item">
+                            <a t-if="brand.brand_url" t-att-href="brand.brand_url" target="_blank" class="d-flex justify-content-center align-items-center h-100"><img t-attf-src="/web/image/image.brand/{{brand.id}}/image" class="logo-img" t-att-alt="brand.name"/></a>
+                            <div t-else="" class="d-flex justify-content-center align-items-center h-100"><img t-attf-src="/web/image/image.brand/{{brand.id}}/image" class="logo-img" t-att-alt="brand.name"/></div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer id="my_custom_footer" class="footer-tm" style="margin-top:150px;">
+                    <div class="container-fluid mr-5 ml-5" style="width:90%;">
+                        <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim" style="max-height: 50px;" class="mb-3" />
+                            <p class="fw-bold text-white">PT Thomas Maritim Indonesia</p>
+                            <p>
+                                Sedayu Square J 17<br/>
+                                Jl Outer Ring Ringroad - Cengkareng Barat<br/>
+                                Cengkareng - Jakarta Barat<br/>
+                                DKI Jakarta , 11730<br/><br/>
+                                +6221 2255 4816<br/>
+                                info@thomasmaritim.com
+                            </p>
+                        </div>
+                        <div class="col-lg-2 col-md-4 mb-4">
+                        </div>
+                        <div class="col-lg-1 col-md-4 mb-4">
+                            <h5>About Us</h5>
+                            <ul class="footer-links">
+                            <li><a href="/about-us">Who Are We</a></li>
+                            <li><a href="/#our-brands">Our Brands</a></li>
+                            <li><a href="/about-us">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-4 mb-4">
+                            <h5>Our Services</h5>
+                            <ul class="footer-links">
+                            <li><a href="/products">Marine Supply &amp; Services</a></li>
+                            <li><a href="/products">Machinery &amp; Industrial Solutions</a></li>
+                            <li><a href="/products">LSA/FFA Services</a></li>
+                            <li><a href="/products">Other</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-4 mb-4">
+                            <h5>Area of Operation</h5>
+                            <ul class="footer-links">
+                            <li><a href="/#area-of-operation">Shipowner and management</a></li>
+                            <li><a href="/#area-of-operation">Offshore</a></li>
+                            <li><a href="/#area-of-operation">Factory &amp; Plantation</a></li>
+                            <li><a href="/#area-of-operation">General Merchant</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="bottom-bar text-center text-white-50">
+                            <div class="footer-content" style="display:flex;margin: 0 auto;justify-content: space-between;align-items:center;flex-wrap:wrap;">
+                                <p class="mb-0" style="text-align:left;">© 2025 Thomas Maritim Indonesia. All Rights Reserved.</p>
+                                <p class="" style="text-align:right;">Image from Freepik</p>
+                            </div>
+                        </div>
+                    </div>
+                    </footer>
+
+            </main>
+            
+            <t t-call-assets="web.assets_frontend_minimal" t-css="false"/>
+             <script type="text/javascript">
+                document.addEventListener('DOMContentLoaded', function () {
+                    const filterControls = document.querySelector('.filter-controls');
+                    if (!filterControls) return;
+                    const filterButtons = filterControls.querySelectorAll('.btn');
+                    const clientLogos = document.querySelectorAll('.client-logo-item');
+                    filterButtons.forEach(button => {
+                        button.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            filterButtons.forEach(btn => btn.classList.remove('active'));
+                            this.classList.add('active');
+                            const currentFilter = this.getAttribute('data-filter');
+                            clientLogos.forEach(logo => {
+                                const logoCategory = logo.getAttribute('data-category');
+                                if (currentFilter === 'all' || currentFilter === logoCategory) {
+                                    logo.style.display = '';
+                                } else {
+                                    logo.style.display = 'none';
+                                }
+                            });
+                        });
+                    });
+                });
+            </script>
+        </body>
+    </html>
+</template>
+</odoo>

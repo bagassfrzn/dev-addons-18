@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="our_portofolio_template" name="Thomas Maritim Homepage">
+    <html t-att-lang="lang">
+        <head>
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+            <t t-call-assets="web.assets_frontend" t-css="true"/>
+            <link rel="stylesheet" href="/tmi_web/static/css/portofolio.css"/>
+
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+
+            <style>
+
+            </style>
+        </head>
+        <body>
+            <header class="header-tm">
+                <nav class="container-fluid navbar navbar-expand-lg navbar-dark fixed-top" >
+                    <a class="navbar-brand" href="/">
+                        <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim"/>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/products">Our Services</a></li>
+                        </ul>
+
+                        <a class="navbar-brand d-none d-lg-block mx-auto" href="/">
+                            <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim"/>
+                        </a>
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="/#area-of-operation">Area of Operation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#our-brands">Brands</a></li>
+                        </ul>
+
+                        <div class="header-contact ms-auto">
+                            <a class="nav-item" href="tel:+622122554816">+6221 2255-4816</a>
+                            <a class="nav-item" href="mailto:info@thomasmaritim.com">info@thomasmaritim.com</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <section class="hero-section-tm">
+                    <div class="hero-overlay"></div>
+                    <div class="container-fluid hero-content text-center" style="width:90%;">
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8 mt-5">
+                                <span class="hero-badge-tm">Our Portfolio</span>
+                                <h1 class="hero-title-tm">Proven Excellence Across the</h1>
+                                <h1 class="hero-title-tm">Maritime Industry</h1>
+                                <p class="hero-description-tm">
+                                    Delivering consistent, high-quality marine supplies to vessels and offshore operations. On time, every time.
+                                </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section style="background-color: #fff; padding: 60px 0;">
+                    <div class="container-custom">
+                        <!-- Blok 1 -->
+                        <div class="row-custom align-items-center mb-5 mt-5">
+                        <div class="col-md-6-custom">
+                            <img src="/tmi_web/static/src/img-portofolio/sealxpert.png" alt="SealXpert" class="img-fluid-custom rounded shadow"/>
+                        </div>
+                        <div class="col-md-6-custom ml-5" style="margin-left:20px;">
+                            <img src="/tmi_web/static/src/img-portofolio/sealxpert-logo.png" alt="SealXpert Logo" style="height:80px; margin-bottom:80px;"/>
+                            <h1 class="fw-bold-custom text-primary" style="margin-bottom:20px; color:#005f63;">Authorized Agent of SEALXPERT</h1>
+                            <p>
+                            We handle leak repair, corrosion control, rebuilding, maintenance, and fire protection, all to keep your vessel strong and secure.
+                            </p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Leak Repair</li>
+                            <li>Corrosion Repair &amp; Reinforcement</li>
+                            <li>Repair &amp; Rebuilding</li>
+                            <li>Maintenance</li>
+                            <li>Fire Protection</li>
+                            <li>Corrosion Protection</li>
+                            </ul>
+                        </div>
+                        </div>
+                        <!-- Blok 2 -->
+                        <div class="row-custom align-items-center mt-5">
+                        <div class="col-md-6-custom order-md-1 order-2">
+                            <img src="/tmi_web/static/src/img-portofolio/rikenkeiki-logo.png" alt="Riken Keiki Logo"  style="height:80px; margin-bottom:80px;"/>
+                            <h1 class="fw-bold-custom" style="color:#005f63;">RIKEN KEIKI</h1>
+                            <p>
+                            We offer personal and multi-gas detectors, sensors, and reliable service and calibration to ensure safety and accuracy.
+                            </p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Personal Gas Detector</li>
+                            <li>Multi Gas Detector</li>
+                            <li>Gas Detector Sensors</li>
+                            <li>Service &amp; Calibration</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 order-md-2 order-1">
+                            <img src="/tmi_web/static/src/img-portofolio/riken.png" alt="Riken" class="img-fluid-custom rounded shadow"/>
+                        </div>
+                        </div>
+                        <!-- Blok 1 -->
+                        <div class="row-custom align-items-center mb-5 mt-5">
+                        <div class="col-md-6-custom">
+                            <img src="/tmi_web/static/src/img-portofolio/honeywell.png" alt="honeywell" class="img-fluid-custom rounded shadow"/>
+                        </div>
+                        <div class="col-md-6-custom" style="margin-left:20px;">
+                            <img src="/tmi_web/static/src/img-portofolio/honeywell-logo.png" alt="honeywell Logo" style="height:80px; margin-bottom:80px;"/>
+                            <h1 class="fw-bold-custom text-primary" style="margin-bottom:20px; color:#005f63;">Honeywell</h1>
+                            <p>
+                                We supply safety equipment, refrigerant gases, and gas detectors with complete accessories, everything to support safe and efficient operations.                            </p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Safety Equipments </li>
+                            <li>Refrigerant Gas </li>
+                            <li>Gas Detector &amp; Accessories</li>
+                            </ul>
+                        </div>
+                        </div>
+                        <!-- Blok 2 -->
+                        <div class="row-custom align-items-center">
+                        <div class="col-md-6-custom order-md-1 order-2">
+                            <img src="/tmi_web/static/src/img-portofolio/ptrholland-logo.png" alt="PTR Holland Logo"  style="height:80px; margin-bottom:80px;"/>
+                            <h1 class="fw-bold-custom" style="color:#005f63;">PTR Holland</h1>
+                            <p>
+                            We provide SOLAS-approved pilot ladders, embarkation ladders, personnel transfer baskets, and related accessories, built for safety and compliance.
+                            </p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Solas Approved Pilot Ladder </li>
+                            <li>Solas Approved Embarkation Ladder</li>
+                            <li>Solas Approved Personel Transfer Basket </li>
+                            <li>Other Accessories</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 order-md-2 order-1">
+                            <img src="/tmi_web/static/src/img-portofolio/ptrholland.png" alt="PTR Holland" class="img-fluid-custom rounded shadow"/>
+                        </div>
+                        </div>
+                        <!-- Blok 1 -->
+                        <div class="row-custom align-items-center mb-5 mt-5">
+                        <div class="col-md-6-custom">
+                            <img src="/tmi_web/static/src/img-portofolio/kolorkut.png" alt="kolorkut" class="img-fluid-custom rounded shadow"/>
+                        </div>
+                        <div class="col-md-6-custom" style="margin-left:20px;">
+                            <img src="/tmi_web/static/src/img-portofolio/kolorkut-logo.png" alt="kolorkut Logo" style="height:80px; margin-bottom:80px;"/>
+                            <h1 class="fw-bold-custom text-primary" style="margin-bottom:20px; color:#005f63;">Kolorkut</h1>
+                            <p>
+                            We supply water and gasoline finding paste, essential tools for accurate tank measurements and safety checks.
+                            </p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Water Finding Paste</li>
+                            <li>Gasoline Finding Paste</li>
+                            </ul>
+                        </div>
+                        </div>
+                        <!-- Blok 2 -->
+                        <div class="row-custom align-items-center">
+                        <div class="col-md-6-custom order-md-1 order-2">
+                            <img src="/tmi_web/static/src/img-portofolio/motorola-logo.png" alt="Motorola Logo"  style="height:80px; margin-bottom:80px;"/>
+                            <h1 class="fw-bold-custom" style="color:#005f63;">MOTOROLA</h1>
+                            <p>
+                            We offer handheld marine radios and accessories, ensuring reliable communication at sea.
+                            </p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Handheld Marine Radio </li>
+                            <li>Accessories</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 order-md-2 order-1">
+                            <img src="/tmi_web/static/src/img-portofolio/motorola.png" alt="Motorola" class="img-fluid-custom rounded shadow"/>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+                <footer id="my_custom_footer" class="footer-tm">
+                    <div class="container-fluid" style="width:90%;">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim" style="max-height: 50px;" class="mb-3" />
+                                <p class="fw-bold text-white">PT Thomas Maritim Indonesia</p>
+                                <p>
+                                    Sedayu Square J 17<br/>
+                                    Jl Outer Ring Ringroad - Cengkareng Barat<br/>
+                                    Cengkareng - Jakarta Barat<br/>
+                                    DKI Jakarta , 11730<br/><br/>
+                                    +6221 2255 4816<br/>
+                                    info@thomasmaritim.com
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-md-6 mb-4"></div>
+                            <div class="col-lg-2 col-md-4 mb-4">
+                                <h5>About Us</h5>
+                                <ul class="footer-links">
+                                    <li><a href="/about-us">Who Are We</a></li>
+                                    <li><a href="/#our-brands">Our Brands</a></li>
+                                    <li><a href="/about-us">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 mb-4">
+                                <h5>Our Services</h5>
+                                <ul class="footer-links">
+                                    <li><a href="/products">Marine Supply &amp; Services</a></li>
+                                    <li><a href="/products">Machinery &amp; Industrial Solutions</a></li>
+                                    <li><a href="/products">LSA/FFA Services</a></li>
+                                    <li><a href="/products">Other</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 mb-4">
+                                <h5>Area of Operation</h5>
+                                <ul class="footer-links">
+                                    <li><a href="/#area-of-operation">Shipowner and management</a></li>
+                                    <li><a href="/#area-of-operation">Offshore</a></li>
+                                    <li><a href="/#area-of-operation">Factory &amp; Plantation</a></li>
+                                    <li><a href="/#area-of-operation">General Merchant</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bottom-bar text-center text-white-50">
+                            <div class="footer-content" style="display:flex; margin: 0 auto; justify-content: space-between; align-items:center; flex-wrap:wrap;">
+                                <p class="mb-0" style="text-align:left;">© 2025 Thomas Maritim Indonesia. All Rights Reserved.</p>
+                                <p class="mb-0" style="text-align:right;">Image from Freepik</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+
+            <t t-call-assets="web.assets_frontend_minimal" t-css="false"/>
+            <script type="text/javascript">
+                // Script untuk filter logo tidak ada di HTML, jadi dikosongkan untuk saat ini.
+                // Jika Anda membutuhkannya, HTML untuk filter dan logo harus ditambahkan.
+            </script>
+        </body>
+    </html>
+</template>
+</odoo>

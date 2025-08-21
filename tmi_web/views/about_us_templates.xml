@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="about_us_template" name="Thomas Maritim Homepage">
+    <html t-att-lang="lang">
+        <head>
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+            <t t-call-assets="web.assets_frontend" t-css="true"/>
+            <link rel="stylesheet" href="/tmi_web/static/css/about-us.css"/>
+            
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+
+            <style>
+
+            </style>
+        </head>
+        <body>
+            <header class="header-tm">
+                <nav class="container-fluid navbar navbar-expand-lg navbar-dark fixed-top" >
+                    <a class="navbar-brand" href="/">
+                        <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim"/>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/products">Our Services</a></li>
+                        </ul>
+
+                        <a class="navbar-brand d-none d-lg-block mx-auto" href="/">
+                            <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim"/>
+                        </a>
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="/#area-of-operation">Area of Operation</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#our-brands">Brands</a></li>
+                        </ul>
+
+                        <div class="header-contact ms-auto">
+                            <a class="nav-item" href="tel:+622122554816">+6221 2255-4816</a>
+                            <a class="nav-item" href="mailto:info@thomasmaritim.com">info@thomasmaritim.com</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <section class="hero-section-tm">
+                    <div class="hero-overlay"></div>
+                    <div class="container-fluid hero-content text-center" style="width:90%;">
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-8 mt-5">
+                                <span class="section-badge">About Us</span>
+                                <h1 class="hero-title-tm">Let’s Connect and Set Sail</h1>
+                                <h1 class="hero-title-tm">Forward Together</h1>
+                                <p class="hero-description-tm">
+                                    Have questions or need a quote? Our team is ready to support your maritime needs. Reach out anytime and we'll get back to you promptly.
+                                </p>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-padding bg-light" id="contact-us">
+                    <div class="container-fluid" style="width:90%;">
+                        <div class="map-container shadow-sm mb-5">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.0413590782027!2d106.729064!3d-6.125136699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1dfaa8065ffb%3A0xce5592872b379427!2sPT%20Thomas%20Maritim%20Indonesia!5e0!3m2!1sid!2sid!4v1753617143733!5m2!1sid!2sid" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <div class="row contact-details-tm">
+                            <div class="col-lg-4 mb-4 mb-lg-0">
+                                <h5 class="contact-title">PT Thomas Maritim Indonesia</h5>
+                                <p class="contact-text">
+                                    Sedayu Square J/17, Jl. Outer Ringroad Lkr. <br/> Luar, Cengkareng, Kota Jakarta Barat, <br/>DKI Jakarta 11730
+                                </p>
+                            </div>
+
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                                <!-- <h6 class="contact-label">Call us directly</h6>
+                                <a href="tel:+622122554816" class="contact-link">+6221 2255-4816</a> -->
+                                <h6 class="contact-label">Call us directly</h6>
+                                <a href="tel:+622122554816" class="contact-link">+6221 2255-4816</a>
+                                <h6 class="contact-label">Contact email</h6>
+                                <div class="social-icons mt-3">
+                                    <a href="#" target="_blank" title="Facebook"><i class="fa fa-facebook-f"></i></a>
+                                    <a href="#" target="_blank" title="X (Twitter)"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-6">
+                                <a href="mailto:info@thomasmaritim.com" class="contact-link">info@thomasmaritim.com</a>
+                            </div>
+                        </div>
+                    </div>
+</section>
+                <footer id="my_custom_footer" class="footer-tm" >
+                    <div class="container-fluid mr-5 ml-5" style="width:90%;">
+                        <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <img src="/tmi_web/static/src/img/logo_navbar.png" alt="Thomas Maritim" style="max-height: 50px;" class="mb-3" />
+                            <p class="fw-bold text-white">PT Thomas Maritim Indonesia</p>
+                            <p>
+                                Sedayu Square J 17<br/>
+                                Jl Outer Ring Ringroad - Cengkareng Barat<br/>
+                                Cengkareng - Jakarta Barat<br/>
+                                DKI Jakarta , 11730<br/><br/>
+                                +6221 2255 4816<br/>
+                                info@thomasmaritim.com
+                            </p>
+                        </div>
+                        <div class="col-lg-2 col-md-4 mb-4">
+                        </div>
+                        <div class="col-lg-1 col-md-4 mb-4">
+                            <h5>About Us</h5>
+                            <ul class="footer-links">
+                            <li><a href="/about-us">Who Are We</a></li>
+                            <li><a href="/products">Our Brands</a></li>
+                            <li><a href="/about-us">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-4 mb-4">
+                            <h5>Our Services</h5>
+                            <ul class="footer-links">
+                            <li><a href="/products">Marine Supply &amp; Services</a></li>
+                            <li><a href="/products">Machinery &amp; Industrial Solutions</a></li>
+                            <li><a href="/products">LSA/FFA Services</a></li>
+                            <li><a href="/products">Other</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-4 mb-4">
+                            <h5>Area of Operation</h5>
+                            <ul class="footer-links">
+                            <li><a href="/#area-of-operation">Shipowner and management</a></li>
+                            <li><a href="/#area-of-operation">Offshore</a></li>
+                            <li><a href="/#area-of-operation">Factory &amp; Plantation</a></li>
+                            <li><a href="/#area-of-operation">General Merchant</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="bottom-bar text-center text-white-50">
+                            <div class="footer-content" style="display:flex;margin: 0 auto;justify-content: space-between;align-items:center;flex-wrap:wrap;">
+                                <p class="mb-0" style="text-align:left;">© 2025 Thomas Maritim Indonesia. All Rights Reserved.</p>
+                                <p class="" style="text-align:right;">Image from Freepik</p>
+                            </div>
+                        </div>
+                    </div>
+                    </footer>
+
+            </main>
+            
+            <t t-call-assets="web.assets_frontend_minimal" t-css="false"/>
+            <script type="text/javascript">
+                document.addEventListener('DOMContentLoaded', function () {
+                    const filterControls = document.querySelector('.filter-controls');
+                    if (!filterControls) return;
+                    const filterButtons = filterControls.querySelectorAll('.btn');
+                    const clientLogos = document.querySelectorAll('.client-logo-item');
+                    filterButtons.forEach(button => {
+                        button.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            filterButtons.forEach(btn => btn.classList.remove('active'));
+                            this.classList.add('active');
+                            const currentFilter = this.getAttribute('data-filter');
+                            clientLogos.forEach(logo => {
+                                const logoCategory = logo.getAttribute('data-category');
+                                if (currentFilter === 'all' || currentFilter === logoCategory) {
+                                    logo.style.display = '';
+                                } else {
+                                    logo.style.display = 'none';
+                                }
+                            });
+                        });
+                    });
+                });
+            </script>
+        </body>
+    </html>
+</template>
+</odoo>

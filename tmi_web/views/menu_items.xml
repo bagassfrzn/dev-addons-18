@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+            id="menu_website_content_management"
+            name="Website Content"
+            parent="website.menu_website_configuration"
+            sequence="9"/>
+        <!-- <menuitem
+            id="menu_website_our_area"
+            name="Our area"
+            action="action_website_our_area"
+            parent="menu_website_content_management"
+            sequence="10"/> -->
+        <menuitem
+            id="menu_website_image_brand"
+            name="Brand Logos"
+            action="action_website_image_brand"
+            parent="menu_website_content_management"
+            sequence="20"/>
+        <menuitem
+            id="menu_website_our_product"
+            name="Our product"
+            action="action_website_our_product"
+            parent="menu_website_content_management"
+            sequence="30"/>
+        <menuitem
+            id="menu_website_our_service"
+            name="our service"
+            action="action_website_our_service"
+            parent="menu_website_content_management"
+            sequence="40"/>
+        <menuitem
+            id="menu_website_our_client"
+            name="our client"
+            action="action_website_our_client"
+            parent="menu_website_content_management"
+            sequence="50"/>
+
+
+</odoo>
