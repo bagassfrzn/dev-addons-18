@@ -12,15 +12,15 @@ class BrandImageController(http.Controller):
 
     @http.route('/products', type='http', auth='public', website=True)
     def our_product(self,**kw):
-        our_products = request.env['our.product'].search(
+        our_products = request.env['our.product'].sudo().search(
             [('is_published','=',True)],
             order='sequence asc'
         )
-        our_services = request.env['our.service'].search(
+        our_services = request.env['our.service'].sudo().search(
             [('is_published','=',True)],
             order='sequence asc'
         )
-        our_clients = request.env['our.client'].search(
+        our_clients = request.env['our.client'].sudo().search(
             [('is_published','=',True)],
             order='sequence asc'
         )
@@ -37,21 +37,21 @@ class BrandImageController(http.Controller):
         Controller to fetch and display published brand logos.
         """
         # Cari semua logo brand yang berstatus 'is_published = True'
-        brands = request.env['image.brand'].search( # DIUBAH: Model
+        brands = request.env['image.brand'].sudo().search( # DIUBAH: Model
             [('is_published', '=', True)],
             order='sequence asc'
         )
 
-        our_clients = request.env['our.client'].search(
+        our_clients = request.env['our.client'].sudo().search(
             [('is_published','=',True)],
             order='sequence asc'
         )
 
-        our_services = request.env['our.service'].search(
+        our_services = request.env['our.service'].sudo().search(
             [('is_published','=',True)],
             order='sequence asc',limit=4
         )
-        our_areas = request.env['our.area'].search(
+        our_areas = request.env['our.area'].sudo().search(
             [('is_published','=',True)],
             order='sequence asc'
         )
