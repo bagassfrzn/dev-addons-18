@@ -9,7 +9,7 @@
     'author': "Programer Odoo 18 (Anda)",
     'website': "https://www.odoo.com",
     'category': 'Website/Website',
-    'version': '18.0.1.0.0',
+    'version': '18.0.3.0.0',
     'depends': ['base', 'website'],
     'data': [
         'security/ir.model.access.csv',
